@@ -1,0 +1,613 @@
+@charset "UTF-8";
+/* Athena Search Autocomplete modal */
+#searchform {
+    position: relative !important;
+}
+
+.search-modal #searchform input[type="search"]:focus {
+    outline: none;
+}
+
+.search-modal #searchform input[type="submit"] {
+    display: none;
+}
+
+.search-modal #searchform .athena-search-autocomplete {
+    max-height: initial;
+}
+
+.search-modal #searchform .athena-search-autocomplete .athena-ac-head h4 {
+    text-indent: 6px;
+}
+
+.search-modal #searchform .athena-search-autocomplete.athena-grid {
+    border: none;
+    box-shadow: none;
+    margin: .2rem;
+    position: relative;
+    top: auto;
+    width: calc(100% + 40px);
+    max-height: calc(100vh - 220px);
+}
+
+@media (max-width: 767px) {
+    .search-modal #searchform .athena-search-autocomplete.athena-grid {
+        width: calc(100% + 40px) !important;
+    }
+}
+
+.search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex::before {
+    background: transparent;
+}
+
+.search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex a.athena-ac-block {
+    padding: 2px 5px;
+}
+
+.search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex a.athena-ac-block:hover img {
+    transform: scale(1.05);
+}
+
+@media (min-width: 1200px) {
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .bigg_col {
+        width: 85%;
+    }
+
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .bigg_col .athena-ac-block {
+        width: 16.66%;
+    }
+
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .bigg_col .athena-ac-block:nth-child(5) {
+        clear: inherit;
+    }
+
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .bigg_col .athena-ac-block:nth-child(8n) {
+        clear: left;
+    }
+
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .small_col {
+        width: 15%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .bigg_col {
+        border-left: 1px solid #ededef;
+        width: 75%;
+    }
+
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .small_col {
+        width: 25%;
+    }
+}
+
+@media (max-width: 991px) {
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .bigg_col {
+        width: 75%;
+    }
+
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .small_col {
+        width: 25%;
+    }
+}
+
+@media (max-width: 767px) {
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .small_col {
+        width: 100%;
+    }
+
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .bigg_col {
+        border-left: 0;
+        width: 100%;
+    }
+
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .bigg_col .athena-ac-block {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (max-width: 575px) {
+    .search-modal #searchform .athena-search-autocomplete.athena-grid .athena-flex .bigg_col .athena-ac-block {
+        width: 100%;
+        float: left;
+    }
+}
+
+/* Twenty Twenty Theme Oweride */
+body:not(.overlay-header) #site-header .toggle {
+    max-height: 140px;
+}
+
+body.showing-search-modal #site-header {
+    z-index: 2;
+}
+
+.search-modal .search-field {
+    margin: 0 !important;
+    max-width: calc(100%) !important;
+}
+
+/* Athena Search - WooCmrc Product Grid */
+body.search #athena-maincontent {
+    padding-top: 2rem;
+    padding-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    body.search #athena-maincontent {
+        margin: 0 auto;
+        padding: 2vw 6vw;
+    }
+}
+
+@media only screen and (min-width: 1168px) {
+    body.search #athena-maincontent {
+        max-width: 1600px;
+        padding: 4vw 6vw;
+        margin: 0 auto;
+    }
+}
+
+body.search #athena-maincontent .athena-main {
+    margin: 0 5vw;
+}
+
+@media only screen and (min-width: 768px) {
+    body.search #athena-maincontent .athena-main {
+        margin: 0;
+    }
+}
+
+body.search #athena-maincontent .athena-main .toolbar-products {
+    display: block;
+    width: 100%;
+}
+
+body.search #athena-maincontent .athena-main .toolbar-products .modes {
+    float: right;
+}
+
+body.search #athena-maincontent .athena-main .toolbar-products #paging-label {
+    display: none;
+}
+
+body.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+}
+
+body.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item {
+    float: left;
+    font-size: 16px;
+    font-weight: 700;
+    margin: .5rem 0 0 2rem;
+    padding: 1rem;
+}
+
+body.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item .page .label,
+          body.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item.pages-item-next .next .label {
+    display: none;
+}
+
+body.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.pages-item-next .next span:not(.label) {
+    font-size: 0;
+}
+
+body.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.pages-item-next .next span:not(.label)::before {
+    content: "→";
+    display: inline;
+    font-size: 16px;
+}
+
+body.search #athena-maincontent .athena-main .toolbar-products .toolbar-amount {
+    float: left;
+}
+
+body.search #athena-maincontent .athena-main .toolbar-products .toolbar-sorter {
+    float: right;
+}
+
+body.search #athena-maincontent .athena-main .toolbar-products .toolbar-sorter select#sorter {
+    font-size: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+    body.search #athena-maincontent .athena-main .toolbar-products .toolbar-sorter {
+        margin-bottom: 3rem;
+        font-size: .8em;
+    }
+}
+
+body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid {
+    clear: both;
+}
+
+body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products::before {
+    content: ' ';
+    display: table;
+}
+
+body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product {
+          /* 4 in 1 */
+    float: left;
+    margin: 0 3.8% 2.992em 0;
+    padding: 0;
+    position: relative;
+    width: 22.05%;
+    margin-left: 0;
+    display: -webkit-box;
+          /* 2 in 1 */
+          /* 1 in 1 */
+}
+
+body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product:first-of-type, body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product:nth-child(4n+1) {
+    clear: both;
+}
+
+body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product:nth-child(4n) {
+    margin-right: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product {
+        width: 48%;
+        float: left;
+        clear: both;
+        margin: 0 0 2.992em;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 668px) {
+    body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product {
+        width: 50%;
+    }
+
+    body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product:nth-of-type(2n) {
+        padding: 0 0 3em 2vw;
+    }
+
+    body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product:nth-of-type(2n+1) {
+        padding: 0 2vw 3em 0;
+    }
+}
+
+@media only screen and (max-width: 667px) {
+    body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product {
+        width: 100%;
+    }
+
+    body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product img {
+        max-width: 450px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    margin-bottom: 5em;
+}
+
+body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product .product-item-details {
+    margin: 1.5rem 0 .5rem;
+}
+
+body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product .product-item-details .name a.product-item-link {
+    font-size: 2.5rem;
+    color: #111111;
+}
+
+body.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product .product-item-details .price-box {
+    margin-bottom: 2rem;
+}
+
+body.search .sidebar {
+    display: none;
+}
+
+/*
+ * This style is made for Athena Search WooCommerce "Storefront" theme integration
+*/
+body.theme-storefront {
+  /*athena-search-autocomplete*/
+  /* storefront-handheld-footer-bar */
+  /* Athena Search - WooCmrc Product Grid */
+}
+
+body.theme-storefront .athena-search-autocomplete {
+    border: 2px solid #ffffff;
+    outline: 2px solid #7d3f71;
+    top: 46px;
+    right: 2px;
+}
+
+@-moz-document url-prefix() {
+    body.theme-storefront .athena-search-autocomplete {
+        right: 0;
+        top: 44px;
+    }
+}
+
+body.theme-storefront .athena-search-autocomplete .athena-el-2 {
+    text-align: center;
+    line-height: normal;
+}
+
+body.theme-storefront .athena-search-autocomplete .athena-el-2 .athena-name,
+      body.theme-storefront .athena-search-autocomplete .athena-el-2 .athena-price-only,
+      body.theme-storefront .athena-search-autocomplete .athena-el-2 .athena-sale-price {
+    font-size: 16px;
+}
+
+body.theme-storefront .athena-search-autocomplete .athena-el-2 .athena-name {
+    color: #333333;
+    margin-bottom: 0;
+}
+
+body.theme-storefront .athena-search-autocomplete .athena-el-2 .athena-price,
+      body.theme-storefront .athena-search-autocomplete .athena-el-2 .athena-price-only {
+    color: #6d6d6d;
+}
+
+body.theme-storefront .athena-search-autocomplete .athena-el-2 .athena-price {
+    display: inline-block;
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+body.theme-storefront .athena-search-autocomplete .athena-el-2 .athena-sale-price {
+    color: #333333;
+}
+
+@media (max-width: 767px) {
+    body.theme-storefront .storefront-handheld-footer-bar .athena-search-autocomplete {
+        display: block;
+        bottom: 45px;
+        border: 0;
+        outline: 2px solid #7d3f71;
+        top: auto;
+        width: calc(100% - 4px) !important;
+        right: 0;
+        max-height: 41vh !important;
+    }
+
+    body.theme-storefront .storefront-handheld-footer-bar .athena-search-autocomplete .athena-el-2 {
+        text-align: left;
+    }
+
+    body.theme-storefront .storefront-handheld-footer-bar .athena-search-autocomplete .bigg_col .athena-ac-block {
+        clear: both;
+    }
+}
+
+body.theme-storefront.search #athena-maincontent {
+    padding: 0;
+}
+
+body.theme-storefront.search #athena-maincontent .woocommerce-breadcrumb {
+    display: none;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product .product-item-details {
+    text-align: center;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product .product-item-details .name a.product-item-link {
+    font-size: 16px;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product .product-item-details .name a.product-item-link:focus {
+    outline: none;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product .product-item-details .price-box {
+    display: flex;
+    justify-content: center;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product .product-item-details .price-box .price-label {
+    display: none;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product .product-item-details .price-box .old-price {
+    font-size: 14px;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product .product-item-details .price-box .special-price {
+    color: #333333;
+    order: 2;
+    padding-left: 5px;
+}
+
+@media only screen and (max-width: 667px) {
+    body.theme-storefront.search #athena-maincontent .athena-main .products.wrapper.grid.products-grid ol.products li.product img {
+        max-width: initial;
+    }
+
+    body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages {
+        text-align: center;
+    }
+
+    body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item {
+        margin: 0;
+    }
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item {
+    font-size: 14px;
+    margin: 0 0 0 0.2rem;
+    font-weight: 400;
+    padding: 0;
+    background-color: transparent;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item.current {
+    background-color: #e6e6e6;
+    color: #636363;
+    padding: 0.3342343017em 0.875em;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item:hover {
+    background-color: #e6e6e6;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item:focus {
+    outline: 2px solid #7d3f71;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item a {
+    color: #6d6d6d;
+    padding: 0.3342343017em 0.875em;
+    background-color: transparent;
+    display: block;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item a:focus {
+    outline: none;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item.pages-item-next a, body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item.pages-item-previous a {
+    background-color: transparent;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item.pages-item-next a::before, body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item.pages-item-previous a::before {
+    content: "\f0d9";
+    color: #6d6d6d;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 16px;
+    vertical-align: baseline;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item.pages-item-next a:focus, body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item.pages-item-previous a:focus {
+    outline: none;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item.pages-item-next:hover, body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item.pages-item-previous:hover {
+    background-color: transparent;
+}
+
+body.theme-storefront.search #athena-maincontent .athena-main .toolbar-products .pages ul.pages-items li.item.pages-item-next a::before {
+    content: "\f0da";
+}
+/*SEARCH TABS CSS*/
+.athena-search-tabs {
+    position: relative;
+    min-height: 29px;
+    clear: both;
+    border-bottom: 1px solid #ededef !important;
+}
+.athena-tab {
+    float: left
+}
+.athena-tab label {
+    background: #ededef85;
+    padding: 10px;
+    border: 1px solid #ededef;
+    margin-left: -1px;
+    position: relative;
+    left: 1px;
+    cursor: pointer
+}
+.athena-tab [type="radio"] {
+    opacity: 0
+}
+.athena-tab [type="radio"]:focus ~ label {
+    outline: 2px solid blue
+}
+.athena-tab [type="radio"]:checked ~ label {
+    background: #fff;
+    z-index: 2
+}
+.athena-search-autocomplete.athena-grid > .athena-search-tabs {
+    display: none;
+}
+.athena-search-tabs {
+    border: 0;
+    margin: 0;
+    margin-bottom: 10px
+}
+.athena-search-tabs:after {
+    clear: both;
+    display: table;
+    content: ""
+}
+.athena-search-tabs .athena-tab {
+    margin-right: 12px;
+    margin-bottom: -1px !important
+}
+.athena-search-tabs .athena-tab:last-of-type {
+    margin-right: 0
+}
+.athena-search-tabs .athena-tab label {
+    display: inline-block;
+    border: 1px solid #ededef;
+    margin-left: auto;
+    left: auto
+}
+.athena-tab [type="radio"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px
+}
+.syncit-autocomplete-focus .athena-name {
+    color: #000;
+    -webkit-transition: color .4s ease;
+    -ms-transition: color .4s ease;
+    transition: color .4s ease
+}
+.athena-tab input[type="radio"]:disabled {
+    opacity: 0
+}
+.athena-search-autocomplete.athena-grid .athena-flex .bigg_col {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 465px;
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+    box-sizing: border-box;
+    padding-left: 15px
+}
+.athena-tab [type="radio"]:checked ~ label {
+    background: white;
+    border-bottom: 1px solid white;
+    z-index: 2;
+}
+.athena-search-autocomplete.athena-grid .athena-flex .bigg_col .athena-search-tabs {
+    width: 100%
+}
+
+.athena-search-autocomplete.athena-grid .athena-flex .bigg_col .athena-ac-head {
+    width: 100%
+}
+

@@ -1,0 +1,208 @@
+/*
+ * This style is made for Athena Search WooCommerce "Storefront" theme integration
+*/
+body.theme-storefront {
+
+    /*athena-search-autocomplete*/
+    .athena-search-autocomplete {
+        border: 2px solid $white;
+        outline: 2px solid $storefront-purple;
+        top: 46px;
+        right: 2px;
+
+        @-moz-document url-prefix() {
+            right: 0;
+            top: 44px;
+        }
+
+        .athena-el-2 {
+            text-align: center;
+            line-height: normal;
+
+            .athena-name,
+            .athena-price-only,
+            .athena-sale-price {
+                font-size: 16px;
+            }
+
+            .athena-name {
+                color: $storefront-grey;
+                margin-bottom: 0;
+            }
+
+            .athena-price,
+            .athena-price-only {
+                color: $storefront-price-grey;
+            }
+
+            .athena-price {
+                display: inline-block;
+                font-size: 14px;
+                color: #6d6d6d;
+            }
+
+            .athena-sale-price {
+                color: $storefront-grey;
+            }
+        }
+
+    }
+
+    /* storefront-handheld-footer-bar */
+    @include respond-below(sm) {
+
+        .storefront-handheld-footer-bar .athena-search-autocomplete {
+            display: block;
+            bottom: 45px;
+            border: 0;
+            outline: 2px solid $storefront-purple;
+            top: auto;
+            width: calc(100% - 4px) !important;
+            right: 0;
+            max-height: 41vh !important;
+
+            .athena-el-2 {
+                text-align: left;
+            }
+
+            .bigg_col {
+
+                .athena-ac-block {
+                    clear: both;
+                }
+            }
+        }
+
+    }
+
+    /* Athena Search - WooCmrc Product Grid */
+    &.search-results {
+
+        #athena-maincontent {
+            padding: 0;
+
+            // TODO remove duplicated breadcrumb block
+            .woocommerce-breadcrumb {
+                display: none;
+            }
+
+            .athena-main .products.wrapper.grid.products-grid ol.products li.product .product-item-details  {
+                text-align: center;
+
+                .name a.product-item-link {
+                    font-size: 16px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .price-box {
+                    display: flex;
+                    justify-content: center;
+
+                    .price-label {
+                        display: none;
+                    }
+
+                    .old-price {
+                        font-size: 14px;
+                    }
+
+                    .special-price {
+                        color: $storefront-grey;
+                        order: 2;
+                        padding-left: 5px;
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 667px) {
+                .athena-main .products.wrapper.grid.products-grid ol.products li.product img {
+                    max-width: initial;
+                }
+
+                .athena-main .toolbar-products .pages {
+                    text-align: center;
+
+                    ul.pages-items li.item {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .athena-main .toolbar-products .pages ul.pages-items li.item {
+                font-size: 14px;
+                margin: 0 0 0 0.2rem;
+                font-weight: 400;
+                padding: 0;
+                background-color: transparent;
+
+                &.current {
+                    background-color: #e6e6e6;
+                    color: #636363;
+                    padding: 0.3342343017em 0.875em;
+                }
+
+                &:hover {
+                    background-color: #e6e6e6;
+                }
+
+                &:focus {
+                    outline: 2px solid $storefront-purple;
+                }
+
+                a {
+                    color: #6d6d6d;
+                    padding: 0.3342343017em 0.875em;
+                    background-color: transparent;
+                    display: block;
+
+                     &:focus {
+                         outline: none;
+                     }
+                }
+
+                &.pages-item-next,
+                &.pages-item-previous {
+
+                    a {
+                        background-color: transparent;
+                        font-size: 14px;
+                        color: #ffffff;
+
+                        &::before {
+                            content: "\f0d9";
+                            color: #6d6d6d;
+                            font-family: 'Font Awesome 5 Free';
+                            font-weight: 900;
+                            font-size: 16px;
+                            vertical-align: baseline;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+
+                &.pages-item-next {
+
+                    a {
+
+                        &::before {
+
+                            content: "\f0da";
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,357 @@
+/* Athena Search Autocomplete modal */
+
+#searchform {
+    position: relative !important;
+
+    // This part of the style only works
+    // if Twenty Twenty Theme modal search enabled
+    .search-modal & {
+
+        input[type="search"]:focus {
+            outline: none;
+        }
+
+        input[type="submit"] {
+            display: none;
+        }
+
+        .athena-search-autocomplete {
+            max-height: initial;
+
+            .athena-ac-head h4 {
+                text-indent: 6px;
+            }
+
+            &.athena-grid {
+                border: none;
+                box-shadow: none;
+                margin: .2rem;
+                position: relative;
+                top: auto;
+                width: calc(100% + 40px);
+                max-height: calc(100vh - 220px);
+
+                @include respond-below(sm) {
+                    width: calc(100% + 40px) !important;
+                }
+
+                .athena-flex {
+
+                    &::before {
+                        background: transparent;
+                    }
+
+                    a.athena-ac-block {
+                        padding: 2px 5px;
+
+                        &:hover {
+
+                            img {
+                                transform: scale(1.05);
+                            }
+                        }
+                    }
+                }
+
+                @include respond-above(lg) {
+
+                    .athena-flex .bigg_col {
+                        width: 85%;
+
+                        .athena-ac-block {
+
+                            width: 16.66%;
+
+                            &:nth-child(5) {
+                                clear: inherit;
+                            }
+
+                            &:nth-child(8n) {
+                                clear: left;
+                            }
+                        }
+                    }
+
+                    .athena-flex .small_col {
+                        width: 15%;
+                    }
+                }
+
+                @include respond-below(lg) {
+
+                    .athena-flex .bigg_col {
+                        border-left: 1px solid $grey;
+                        width: 75%;
+                    }
+
+
+                    .athena-flex .small_col {
+                        width: 25%;
+                    }
+                }
+
+                @include respond-below(md) {
+
+                    .athena-flex .bigg_col {
+                        width: 75%;
+                    }
+
+
+                    .athena-flex .small_col {
+                        width: 25%;
+                    }
+                }
+
+                @include respond-below(sm) {
+
+                    .athena-flex .small_col {
+                        width: 100%;
+                    }
+                    .athena-flex .bigg_col {
+                        border-left: 0;
+                        width: 100%;
+
+                        .athena-ac-block {
+                            width: 50%;
+                            float: left;
+                        }
+                    }
+                }
+
+
+                @include respond-below(xs) {
+
+                    .athena-flex .bigg_col {
+
+                        .athena-ac-block {
+                            width: 100%;
+                            float: left;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+/* Twenty Twenty Theme Oweride */
+body:not(.overlay-header) #site-header .toggle {
+    max-height: 140px;
+}
+
+body.showing-search-modal #site-header {
+    z-index: 2;
+}
+
+.search-modal .search-field {
+    margin: 0 !important;
+    max-width: calc(100%) !important;
+}
+
+/* Athena Search - WooCmrc Product Grid */
+body.search-results {
+
+    #athena-maincontent {
+        padding-top: 2rem;
+        padding-bottom: 0;
+
+        @media only screen and (min-width: 768px) {
+            margin: 0 auto;
+            padding: 2vw 6vw;
+        }
+
+        @media only screen and (min-width: 1168px) {
+            max-width: 1600px;
+            padding: 4vw 6vw;
+            margin: 0 auto;
+        }
+
+        .athena-main {
+            margin: 0 5vw;
+
+            @media only screen and (min-width: 768px) {
+                margin: 0;
+            }
+
+            .toolbar-products {
+                display: block;
+                width: 100%;
+
+                .modes {
+                    float: right;
+                }
+
+                #paging-label {
+                    display: none;
+                }
+
+                .pages {
+                    // float: left;
+                    // Hide at the top
+                    // &:nth-child(even) {
+                    //     display: none;
+                    // }
+
+                    ul.pages-items {
+                        display: inline-flex;
+                        list-style: none;
+                        margin: 0;
+
+                        li.item {
+                            float: left;
+                            font-size: 16px;
+                            font-weight: 700;
+                            margin: .5rem 0 0 2rem;
+                            padding: 1rem;
+
+                            .page .label,
+                            &.pages-item-next .next .label {
+                                display: none;
+                            }
+                        }
+
+                        li.pages-item-next {
+
+                            .next span:not(.label) {
+                                // display: none;
+                                font-size: 0;
+
+                                &::before {
+                                    content: "→";
+                                    display: inline;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .toolbar-amount {
+                    float: left;
+                }
+
+                .toolbar-sorter {
+                    float: right;
+
+                    // Hide at the top of the list
+                    // &:nth-last-child() {
+                    //     display: none;
+                    // }
+
+                    select#sorter {
+                        font-size: 1em;
+                    }
+
+                    @media only screen and (max-width: 768px) {
+                        margin-bottom: 3rem;
+                        font-size: .8em;
+                    }
+                }
+            }
+
+            .products.wrapper.grid.products-grid {
+                clear: both;
+
+                ol.products {
+                    display: -webkit-box;
+                    display: flex;
+                    -webkit-box-align: stretch;
+                    align-items: stretch;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    margin: 0;
+
+                    &::before {
+                        content: ' ';
+                        display: table;
+                    }
+                    li.product {
+                        /* 4 in 1 */
+                        float: left;
+                        margin: 0 3.8% 2.992em 0;
+                        padding: 0;
+                        position: relative;
+                        width: 22.05%;
+                        margin-left: 0;
+                        display: -webkit-box;
+
+                        &:first-of-type,
+                        &:nth-child(4n+1) {
+                            clear: both;
+                        }
+
+                        &:nth-child(4n) {
+                            margin-right: 0;
+                        }
+
+                        /* 2 in 1 */
+                        @media only screen and (max-width: 768px) {
+                            width: 48%;
+                            float: left;
+                            clear: both;
+                            margin: 0 0 2.992em;
+                        }
+
+                        @media only screen and (max-width: 768px) and (min-width: 668px) {
+                            width: 50%;
+
+                            &:nth-of-type(2n) {
+                                padding: 0 0 3em 2vw;
+                            }
+
+                            &:nth-of-type(2n+1) {
+                                padding: 0 2vw 3em 0;
+                            }
+
+                        }
+
+                        /* 1 in 1 */
+                        @media only screen and (max-width: 667px) {
+                            width: 100%;
+
+                            img {
+                                max-width: 450px;
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
+
+                    li.product {
+                        display: flex;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                        flex-direction: column;
+                        -webkit-box-pack: justify;
+                        justify-content: space-between;
+                        -webkit-box-align: start;
+                        align-items: flex-start;
+                        margin-bottom: 5em;
+
+
+                        .product-item-details {
+                            margin: 1.5rem 0 .5rem;
+
+                            .name a.product-item-link {
+                                font-size: 2.5rem;
+                                color: $dark-gray;
+                            }
+
+                            .price-box {
+                                margin-bottom: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // hide sidebar
+    .sidebar {
+        display: none;
+    }
+}

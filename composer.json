@@ -1,0 +1,19 @@
+{
+    "name": "plugins/athena-search",
+    "description": "Powerful & Smart Athena Search by Syncit Group. Customize your search experience through our feature-rich dashboard which offers you a detailed insight into top search terms, daily and monthly overviews, product promotion rules, and much more.",
+    "keywords": ["wordpress", "plugin", "athena search"],
+    "homepage": "https://athena.syncitgroup.com",
+    "license": "GPL-3-0",
+    "authors": [
+        {
+            "name": "Zeljko Ivanovic",
+            "email": "zeljko@syncitgroup.com",
+            "homepage": "https://athena.syncitgroup.com"
+        }
+    ],
+    "type": "wordpress-plugin",
+    "require": {
+        "php": ">=5.3.2",
+        "composer/installers": "v1.0.6"
+    }
+}
